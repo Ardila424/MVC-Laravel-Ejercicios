@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TareasController;
 use App\Http\Controllers\PropinasController;
 use App\Http\Controllers\ContrasenasController;
+use App\Http\Controllers\GastosController;
+use App\Http\Controllers\ReservasController;
+use App\Http\Controllers\NotasController;
 
 // Home
 Route::get('/', function () {
@@ -26,25 +29,34 @@ Route::post('/propinas', [PropinasController::class, 'calcular'])->name('propina
 Route::get('/contrasenas', [ContrasenasController::class, 'index'])->name('contrasenas.index');
 Route::post('/contrasenas', [ContrasenasController::class, 'generar'])->name('contrasenas.generar');
 
-// FASE 2: Siguientes 7 Aplicaciones (placeholders - se implementarán después)
+// FASE 2: Siguientes 7 Aplicaciones
 
 // App #4: Gestor de Gastos
-Route::get('/gastos', function() { return view('home'); })->name('gastos.index');
+Route::get('/gastos', [GastosController::class, 'index'])->name('gastos.index');
+Route::post('/gastos', [GastosController::class, 'store'])->name('gastos.store');
+Route::delete('/gastos/{id}', [GastosController::class, 'destroy'])->name('gastos.destroy');
 
 // App #5: Sistema de Reservas
-Route::get('/reservas', function() { return view('home'); })->name('reservas.index');
+Route::get('/reservas', [ReservasController::class, 'index'])->name('reservas.index');
+Route::post('/reservas', [ReservasController::class, 'store'])->name('reservas.store');
+Route::delete('/reservas/{id}', [ReservasController::class, 'destroy'])->name('reservas.destroy');
 
 // App #6: Gestor de Notas
-Route::get('/notas', function() { return view('home'); })->name('notas.index');
+Route::get('/notas', [NotasController::class, 'index'])->name('notas.index');
+Route::get('/notas/create', [NotasController::class, 'create'])->name('notas.create');
+Route::post('/notas', [NotasController::class, 'store'])->name('notas.store');
+Route::get('/notas/{id}/edit', [NotasController::class, 'edit'])->name('notas.edit');
+Route::put('/notas/{id}', [NotasController::class, 'update'])->name('notas.update');
+Route::delete('/notas/{id}', [NotasController::class, 'destroy'])->name('notas.destroy');
 
-// App #7: Calendario de Eventos
+// App #7: Calendario de Eventos (placeholder)
 Route::get('/calendario', function() { return view('home'); })->name('calendario.index');
 
-// App #8: Juego de Memoria
+// App #8: Juego de Memoria (placeholder)
 Route::get('/memoria', function() { return view('home'); })->name('memoria.index');
 
-// App #9: Plataforma de Encuestas
+// App #9: Plataforma de Encuestas (placeholder)
 Route::get('/encuestas', function() { return view('home'); })->name('encuestas.index');
 
-// App #10: Cronómetro
+// App #10: Cronómetro (placeholder)
 Route::get('/cronometro', function() { return view('home'); })->name('cronometro.index');
