@@ -7,6 +7,10 @@ use App\Http\Controllers\ContrasenasController;
 use App\Http\Controllers\GastosController;
 use App\Http\Controllers\ReservasController;
 use App\Http\Controllers\NotasController;
+use App\Http\Controllers\CalendarioController;
+use App\Http\Controllers\MemoriaController;
+use App\Http\Controllers\EncuestasController;
+use App\Http\Controllers\CronometroController;
 
 // Home
 Route::get('/', function () {
@@ -49,14 +53,21 @@ Route::get('/notas/{id}/edit', [NotasController::class, 'edit'])->name('notas.ed
 Route::put('/notas/{id}', [NotasController::class, 'update'])->name('notas.update');
 Route::delete('/notas/{id}', [NotasController::class, 'destroy'])->name('notas.destroy');
 
-// App #7: Calendario de Eventos (placeholder)
-Route::get('/calendario', function() { return view('home'); })->name('calendario.index');
+// App #7: Calendario de Eventos
+Route::get('/calendario', [CalendarioController::class, 'index'])->name('calendario.index');
+Route::post('/calendario', [CalendarioController::class, 'store'])->name('calendario.store');
+Route::delete('/calendario/{id}', [CalendarioController::class, 'destroy'])->name('calendario.destroy');
 
-// App #8: Juego de Memoria (placeholder)
-Route::get('/memoria', function() { return view('home'); })->name('memoria.index');
+// App #8: Juego de Memoria
+Route::get('/memoria', [MemoriaController::class, 'index'])->name('memoria.index');
 
-// App #9: Plataforma de Encuestas (placeholder)
-Route::get('/encuestas', function() { return view('home'); })->name('encuestas.index');
+// App #9: Plataforma de Encuestas
+Route::get('/encuestas', [EncuestasController::class, 'index'])->name('encuestas.index');
+Route::get('/encuestas/create', [EncuestasController::class, 'create'])->name('encuestas.create');
+Route::post('/encuestas', [EncuestasController::class, 'store'])->name('encuestas.store');
+Route::get('/encuestas/{id}/answer', [EncuestasController::class, 'answer'])->name('encuestas.answer');
+Route::post('/encuestas/{id}/answer', [EncuestasController::class, 'saveAnswer'])->name('encuestas.saveAnswer');
+Route::get('/encuestas/{id}/results', [EncuestasController::class, 'results'])->name('encuestas.results');
 
-// App #10: Cronómetro (placeholder)
-Route::get('/cronometro', function() { return view('home'); })->name('cronometro.index');
+// App #10: Cronómetro
+Route::get('/cronometro', [CronometroController::class, 'index'])->name('cronometro.index');
