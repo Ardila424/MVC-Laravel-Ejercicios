@@ -1,16 +1,16 @@
 # MVC Laravel - 10 Mini Aplicaciones
 
-Proyecto Laravel con 10 aplicaciones web usando estilo visual "manual/brutal".
+Proyecto Laravel con 10 aplicaciones web
 
-## 🛠️ Tecnologías
+##  Tecnologías
 
 - **Laravel 11**
 - **PHP 8.2+**
 - **MySQL** (vía WAMP)
 - **Blade Templates**
-- **JavaScript Vanilla**
+- **JavaScript Básico**
 
-## 📦 Instalación
+##  Instalación
 
 1. **Clonar repositorio:**
 ```bash
@@ -47,7 +47,7 @@ DB_PASSWORD=
 php artisan migrate
 ```
 
-## 🚀 Uso
+##  Uso
 
 **Iniciar servidor:**
 ```bash
@@ -64,7 +64,7 @@ O con WAMP:
 http://localhost/MVC-Laravel-Ejercicios/public
 ```
 
-## 📱 Aplicaciones
+##  Aplicaciones
 
 1. **Lista de Tareas** - CRUD con MySQL
 2. **Calculadora de Propinas** - Cálculo de porcentajes
@@ -73,14 +73,7 @@ http://localhost/MVC-Laravel-Ejercicios/public
 5. **Sistema de Reservas** - CRUD con fecha/hora
 6. **Gestor de Notas** - CRUD con categorías
 7. **Calendario de Eventos** - Próximos 10 eventos
-8. **Juego de Memoria** - Grid 4x4 con JavaScript
+8. **Juego de Memoria** - Ventanas 4x4 con JavaScript
 9. **Plataforma de Encuestas** - Sistema completo con relaciones
 10. **Cronómetro** - Con laps y milisegundos
 
-## 🎨 Diseño
-
-Estilo "manual/brutal": bordes negros gruesos, fuente Courier New, sin sombras ni gradientes.
-
-## 📄 Licencia
-
-MIT
